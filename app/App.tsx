@@ -35,9 +35,15 @@ export default function App() {
 
   return (
     <>
+      <iframe
+        src="https://idb-reimagined.lovable.app"
+        className="w-full h-screen border-0"
+        title="Main Content"
+        style={{ width: "100%", height: "100vh" }}
+      />
       {/* Floating Chat Widget */}
       <div
-        className={`fixed bottom-4 right-4 z-50 transition-all duration-300 ease-in-out ${
+        className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
