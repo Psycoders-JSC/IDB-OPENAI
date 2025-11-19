@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { ChatKitPanel, type FactAction } from "@/components/ChatKitPanel";
 import { useColorScheme } from "@/hooks/useColorScheme";
 
@@ -8,7 +8,6 @@ export default function App() {
   const { scheme, setScheme } = useColorScheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isRTL, setIsRTL] = useState(false);
 
   const handleWidgetAction = useCallback(async (action: FactAction) => {
     if (process.env.NODE_ENV !== "production") {
@@ -90,17 +89,6 @@ export default function App() {
               Chat
             </h2>
             <div className="flex items-center gap-2">
-              <button
-                className={`cursor-pointer flex h-8 w-8 items-center justify-center rounded-lg text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-slate-500 ${
-                  isRTL
-                    ? "bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900"
-                    : "text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
-                }`}
-                aria-pressed={isRTL}
-                aria-label={isRTL ? "Disable RTL layout" : "Enable RTL layout"}
-              >
-                RTL
-              </button>
               <button
                 onClick={toggleExpand}
                 className="cursor-pointer flex h-8 w-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
