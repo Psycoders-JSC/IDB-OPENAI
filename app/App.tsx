@@ -43,13 +43,13 @@ export default function App() {
       />
       {/* Floating Chat Widget */}
       <div
-        className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ease-in-out ${
+        className={` fixed bottom-6 right-6 z-50 transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
         <button
           onClick={toggleWidget}
-          className="flex h-14 w-14 items-center justify-center rounded-full bg-slate-900 shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:bg-slate-100 dark:hover:bg-slate-200"
+          className="cursor-pointer flex h-14 w-14 items-center justify-center rounded-full bg-slate-900 shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:bg-slate-100 dark:hover:bg-slate-200"
           aria-label="Open chat"
         >
           <svg
