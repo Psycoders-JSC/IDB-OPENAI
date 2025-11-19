@@ -316,6 +316,7 @@ export function ChatKitPanel({
     },
     onResponseEnd: () => {
       onResponseEnd();
+      //TODO: Maybe check if the resonse is empty, just resend the message programatically
     },
     onResponseStart: () => {
       setErrorState({ integration: null, retryable: false });
