@@ -36,7 +36,7 @@ export default function App() {
   return (
     <>
       <iframe
-        src="https://idb-reimagined.lovable.app"
+        src="https://skyblue-ostrich-174611.hostingersite.com/"
         className="w-full h-screen border-0"
         title="Main Content"
         style={{ width: "100%", height: "100vh" }}
