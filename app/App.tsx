@@ -40,20 +40,21 @@ export default function App() {
         className="w-full h-screen border-0"
         title="Main Content"
         style={{ width: "100%", height: "100vh" }}
+        allow="fullscreen"
       />
       {/* Floating Chat Widget */}
       <div
-        className={` fixed bottom-6 right-6 z-50 transition-all duration-300 ease-in-out ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 transition-all duration-300 ease-in-out ${
           isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
         }`}
       >
         <button
           onClick={toggleWidget}
-          className="cursor-pointer flex h-14 w-14 items-center justify-center rounded-full bg-slate-900 shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:bg-slate-100 dark:hover:bg-slate-200"
+          className="cursor-pointer flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-slate-900 shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:bg-slate-100 dark:hover:bg-slate-200"
           aria-label="Open chat"
         >
           <svg
-            className="h-6 w-6 text-white dark:text-slate-900"
+            className="h-5 w-5 sm:h-6 sm:w-6 text-white dark:text-slate-900"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -69,7 +70,7 @@ export default function App() {
       {/* Chat Panel */}
       <div
         className={`fixed z-50 transition-all duration-300 ease-in-out ${
-          isExpanded ? "inset-0" : "bottom-4 right-4"
+          isExpanded ? "inset-0" : "bottom-4 right-4 sm:bottom-4 sm:right-4"
         } ${
           isOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -80,23 +81,23 @@ export default function App() {
           className={`relative flex flex-col overflow-hidden bg-white shadow-2xl transition-all duration-300 ease-in-out dark:bg-slate-900 ${
             isExpanded
               ? "h-full w-full rounded-none"
-              : "h-[600px] w-[400px] rounded-2xl"
+              : "h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] sm:h-[600px] sm:w-[400px] rounded-2xl"
           }`}
         >
           {/* Header with expand and close buttons */}
-          <div className="flex items-center justify-between border-b border-slate-200 bg-white px-4 py-3 dark:border-slate-700 dark:bg-slate-900">
-            <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+          <div className="flex items-center justify-between border-b border-slate-200 bg-white px-3 sm:px-4 py-2.5 sm:py-3 dark:border-slate-700 dark:bg-slate-900">
+            <h2 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-slate-100">
               Chat
             </h2>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <button
                 onClick={toggleExpand}
-                className="cursor-pointer flex h-8 w-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
+                className="hidden sm:flex cursor-pointer h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100"
                 aria-label={isExpanded ? "Minimize chat" : "Expand chat"}
               >
                 {isExpanded ? (
                   <svg
-                    className="h-5 w-5"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -108,7 +109,7 @@ export default function App() {
                   </svg>
                 ) : (
                   <svg
-                    className="h-5 w-5"
+                    className="h-4 w-4 sm:h-5 sm:w-5"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -122,11 +123,11 @@ export default function App() {
               </button>
               <button
                 onClick={toggleWidget}
-                className="flex h-8 w-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100 cursor-pointer"
+                className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-500 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-100 cursor-pointer"
                 aria-label="Close chat"
               >
                 <svg
-                  className="h-5 w-5"
+                  className="h-4 w-4 sm:h-5 sm:w-5"
                   fill="none"
                   strokeLinecap="round"
                   strokeLinejoin="round"
